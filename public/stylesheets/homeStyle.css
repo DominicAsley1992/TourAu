@@ -1,0 +1,459 @@
+/*
+ * Import nib
+ */
+/*
+ * Grab a custom font from Google
+ */
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100");
+/*
+ * Nib provides a CSS reset
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+/*
+ * Store the main color and
+ * background color as variables
+ */
+body {
+  font-family: 'Lato';
+  background: url("/images/ticks.png");
+  color: #444;
+}
+.page {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
+#menu {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  top: 0px;
+  background-color: #fafafa;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  z-index: 9999;
+}
+#menu .content {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+#menu .content .search {
+  padding-right: 15px;
+  margin-top: 4px;
+}
+#menu .content .search input[type=text] {
+  width: 300px;
+  float: right;
+  height: 25px;
+  padding: 3px;
+  font-family: 'Roboto Slab';
+  border: 1px solid #ddd;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 10px;
+  background-image: url("/images/search.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+#menu .content .search button {
+  float: right;
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+#menu .title {
+  float: left;
+  font-family: 'Roboto Slab';
+  font-size: 2em;
+  font-weight: 300;
+  padding-left: 20px;
+}
+#menu .title .tour {
+  display: inline-block;
+  font-weight: 100;
+}
+#menu .title .au {
+  display: inline-block;
+}
+#menu .title .t {
+  display: inline-block;
+}
+#menu ul {
+  float: right;
+  display: block;
+}
+#menu ul a {
+  color: #333;
+  text-decoration: none;
+}
+#menu ul li {
+  display: inline;
+  text-transform: uppercase;
+  padding: 5px;
+  font-size: 1em;
+  background: #fbfbfb;
+}
+#menu ul li:hover {
+  background: #f1f1f1;
+}
+.footer {
+  position: fixed;
+  clear: both;
+  bottom: 0px;
+  min-height: 10px;
+  background: url("/images/dark_wall/dark_wall.png");
+  width: 100%;
+  text-transform: uppercase;
+  color: #fbfbfb;
+  font-size: 10px;
+}
+.footer p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  padding: 2px;
+  padding-left: 0px;
+}
+button {
+  background-color: #f5f5f5;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  color: #333;
+  font-family: arial;
+  font-size: 12px;
+  font-weight: bold;
+  height: 27px;
+  padding-left: 20px;
+  padding-top: 3px;
+  padding-right: 20px;
+  text-decoration: none;
+}
+button:hover {
+  border-color: #acacac;
+}
+button:active {
+  position: relative;
+  top: 1px;
+}
+#results {
+  min-width: 800px;
+  position: fixed;
+  top: 45px;
+  bottom: 20px;
+  left: 20px;
+  right: 30px;
+  z-index: 1;
+}
+#short {
+  overflow-y: scroll;
+  bottom: 10px;
+  top: 0px;
+  float: left;
+  min-width: 400px;
+  left: 0px;
+  max-height: 100%;
+  z-index: 3;
+}
+#short::-webkit-scrollbar {
+  display: none;
+}
+#long {
+  position: relative;
+  top: 0px;
+  bottom: 20px;
+  right: 25px;
+  left: 15px;
+  max-height: 100%;
+  min-width: 400px;
+  z-index: 2;
+  overflow-y: scroll;
+}
+#long::-webkit-scrollbar {
+  display: none;
+}
+.result {
+  margin-top: 15px;
+  border: 1px solid #bcbcbc;
+  position: relative;
+  background-color: #fcfcfc;
+  width: 395px;
+  overflow: hidden;
+  height: 80px;
+}
+.result img {
+  float: left;
+  width: 30%;
+}
+.result:hover {
+  border-color: #acacac;
+}
+.resultDetails {
+  float: right;
+  width: 70%;
+  font-size: 13px;
+}
+.resultDetails .title {
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #f2f2f2;
+}
+.resultDetails .details {
+  background-color: #f6f6f6;
+  padding: 10px;
+  padding: top 5px;
+  padding: bottom 5px;
+  float: left;
+  width: 100%;
+  height: 100%;
+  font-size: 11px;
+  text-transform: lowercase;
+}
+.push {
+  clear: both;
+}
+.more {
+  float: right;
+  width: 7.5%;
+  height: 53px;
+  padding-top: 28px;
+  padding-left: 12px;
+  line-height: 0px;
+  margin-top: -53px;
+  position: static;
+  background-color: #f1f1f1;
+}
+.more:hover {
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+#showing {
+  font-weight: 300;
+  float: right;
+  display: none;
+}
+#showing p {
+  display: inline-block;
+}
+#showing #denominator {
+  display: inline-block;
+}
+#showing #numerator {
+  display: inline-block;
+}
+.moreInfo {
+  float: right;
+  margin-top: 15px;
+  border: 1px solid #bcbcbc;
+  background-color: #f6f6f6;
+}
+.moreInfo .title {
+  width: 100% -1px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #f2f2f2;
+}
+.moreInfo .body {
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+}
+.moreInfo .imageCol {
+  float: left;
+  width: 20%;
+  margin-top: 5px;
+  overflow-y: scroll;
+}
+.moreInfo .imageCol img {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.moreInfo .imageCol::-webkit-scrollbar {
+  display: none;
+}
+.moreInfo .description {
+  float: right;
+  width: 80%;
+  text-align: justify;
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+.moreInfo .description .title {
+  font-weight: bold;
+  background: none;
+  width: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.moreInfo .description .text {
+  padding-left: 10px;
+}
+.moreInfo .footer {
+  clear: both;
+  height: 60px;
+}
+.map {
+  float: right;
+  position: relative;
+  right: -10px;
+  top: -5px;
+  bottom: 0px;
+  padding: 5px;
+}
+.map:hover {
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+#map-canvas {
+  height: 775px;
+  width: 890px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+#map {
+  height: 800px;
+  width: 900px;
+  position: fixed;
+  left: 50% -10px;
+  top: 50% -400px;
+  z-index: 10;
+  background-color: #fff;
+  display: none;
+}
+.homeSearch {
+  position: static;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.homeSearch input[type=text] {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 33px;
+  padding: 3px;
+  font-family: 'Roboto Slab';
+  border: 1px solid #ddd;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-image: url("/images/search.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.homeTitle {
+  position: static;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
+  font-family: 'Roboto Slab';
+  font-size: 5em;
+  font-weight: 300;
+}
+.homeTitle .tour {
+  display: inline-block;
+  font-weight: 100;
+}
+.homeTitle .au {
+  display: inline-block;
+}
+.homeTitle .t {
+  display: inline-block;
+}

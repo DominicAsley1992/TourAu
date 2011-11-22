@@ -1,0 +1,44 @@
+!!!5
+html
+	head
+		title #{title}
+		link(rel='stylesheet', href='/stylesheets/style.css')			
+		script(src='/scripts/jquery-2.0.2.min.js')
+		script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true')
+		script(src='/scripts/search.js')
+		
+	body
+		#menu
+			.content
+				.title
+					.t T 
+					.tour our
+					.au AU
+				.logoMap
+					img(src='/images/mapButton.png', height='20px')
+				.showMap
+					button(onclick="showMap()") Map					
+				#search
+					button(onclick="search(document.getElementById('params').value)") Search
+					#field
+						input(type='text', placeholder='Distance Kms', id='params', onkeypress="if (event.keyCode==13){search(this.value)}")
+				select(id='filter')
+					option(value='1', id='dist') Distance
+					option(value='2') Category
+				#showing showing 
+					br
+					#numerator
+					p &nbsp;of&nbsp;
+					#denominator 
+				.loading(id='load')
+		.page
+			.push
+			#results
+				#short
+				#long
+			#map
+				.close(onclick="document.getElementById('map').style.visibility = 'hidden'") close
+				#map-canvas
+		.footer
+			p Team 48 - GOVHACK 2013
+			#q(style='display: none;') #{q}

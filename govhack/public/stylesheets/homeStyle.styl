@@ -1,0 +1,370 @@
+/*
+ * Import nib
+ */
+@import 'nib'
+
+/*
+ * Grab a custom font from Google
+ */
+@import url('http://fonts.googleapis.com/css?family=Lato:100,300,400')
+@import url('http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100')
+
+/*
+ * Nib provides a CSS reset
+ */
+global-reset()
+
+/*
+ * Store the main color and
+ * background color as variables
+ */
+main-color = #333
+menu-color = #666
+secondary-color = #FFF
+tile-color = #F1F1F1
+
+
+body
+	font-family 'Lato'
+	background url('/images/ticks.png')
+	color #444
+	
+
+.page
+	width 900px
+	margin-left auto
+	margin-right auto
+	margin-top 55px
+
+	
+
+#menu
+	width 100%
+	height 40px
+	position fixed
+	top 0px
+	background-color #FAFAFA
+	color #333
+	border-bottom 1px solid #CCC
+	z-index 9999
+	
+	.content 
+		width auto
+		margin-left auto
+		margin-right auto
+
+		.search
+			padding-right 15px
+			margin-top 4px
+			input[type=text]
+				width 300px
+				float right
+				height 25px
+				padding 3px
+				font-family 'Roboto Slab'	
+				border 1px solid #DDD
+				padding-left 5px
+				padding-right 5px
+				margin-left 10px
+				background-image url('/images/search.png') 
+				background-repeat no-repeat
+				background-position right
+			button
+				float right
+				text-transform uppercase
+				margin-top 0px
+
+	.title
+		float left
+		font-family 'Roboto Slab'	
+		font-size 2em
+		font-weight 300
+		padding-left 20px
+		.tour
+			display inline-block
+			font-weight 100			
+		.au
+			display inline-block
+		.t
+			display inline-block
+
+	ul
+		float right
+		display block
+		a
+			color #333
+			text-decoration none
+
+		li
+			display inline
+			text-transform uppercase
+			padding 5px
+			font-size 1em
+			background #FBFBFB
+
+		li:hover
+			background #F1F1F1
+
+			 
+.footer
+	position fixed
+	clear both
+	bottom 0px
+	min-height 10px
+	background url('/images/dark_wall/dark_wall.png')
+	width 100%
+	text-transform uppercase
+	color #FBFBFB
+	font-size 10px
+	p
+		margin-left auto
+		margin-right auto
+		width 900px
+		padding 2px
+		padding-left 0px
+
+button
+	background-color #F5F5F5
+	border 1px solid #dcdcdc
+	display inline-block 
+	color #333333 
+	font-family arial
+	font-size 12px 
+	font-weight bold 
+	height 27px
+	padding-left 20px
+	padding-top 3px
+	padding-right 20px
+	text-decoration none
+
+button:hover 
+	border-color #ACACAC
+
+button:active
+	position relative
+	top 1px
+
+#results
+	min-width 800px
+	position fixed
+	top 45px
+	bottom 20px
+	left 20px
+	right 30px
+	z-index 1
+
+#short
+	
+	overflow-y scroll
+	bottom 10px
+	top 0px
+	float left
+	min-width 400px
+	left 0px
+	max-height 100%
+	z-index 3
+
+#short::-webkit-scrollbar
+	display none
+
+#long
+	position relative
+	top 0px
+	bottom 20px
+	right 25px
+	left 15px
+	max-height 100%
+	min-width 400px
+	z-index 2
+	overflow-y scroll
+
+#long::-webkit-scrollbar
+	display none
+
+.result
+	margin-top 15px
+	border 1px solid #BCBCBC
+	position relative
+	background-color #FCFCFC
+	width 395px
+	overflow hidden
+	height 80px
+	img
+			float left
+			width 30%
+
+.result:hover
+	border-color #ACACAC
+
+.resultDetails
+	float right
+	width 70%
+	font-size 13px
+
+	.title
+		width 100%
+		padding 5px
+		padding-left 10px
+		padding-right 10px
+		border-bottom 1px solid #DCDCDC
+		background-color #F2F2F2
+	
+	.details
+		background-color #F6F6F6
+		padding 10px
+		padding top 5px
+		padding bottom 5px
+		float left
+		width 100%
+		height 100%
+		font-size 11px
+		text-transform lowercase
+.push 
+	clear both
+
+.more 
+	float right
+	width 7.5%
+	height 53px
+	padding-top 28px
+	padding-left 12px
+	line-height 0px
+	margin-top -53px
+	position static
+	background-color #F1F1F1
+
+.more:hover
+	background-color #E1E1E1
+	cursor pointer
+
+#showing 
+	font-weight 300
+	float right
+	display none
+
+	p
+		display inline-block
+	
+	#denominator
+		display inline-block
+	#numerator
+		display inline-block
+		
+.moreInfo
+	float right
+	margin-top 15px
+	border 1px solid #BCBCBC
+	background-color #F6F6F6
+	
+	
+	.title
+		width 100%-1px
+		padding 5px
+		padding-left 10px
+		padding-right 10px
+		border-bottom 1px solid #DCDCDC
+		background-color #F2F2F2
+
+	.body
+		padding-bottom 5px
+		padding-left 10px
+		padding-right 10px
+		font-size 13px
+
+	.imageCol
+		float left
+		width 20%
+		margin-top 5px
+		overflow-y scroll
+		img
+			width 100%
+			margin-top 5px
+			margin-bottom 10px
+
+	.imageCol::-webkit-scrollbar
+		display none
+
+		
+		
+	.description
+		float right
+		width 80%
+		text-align justify
+		margin-bottom 10px
+		margin-top -5px
+		
+		.title
+			font-weight bold
+			background none
+			width auto
+			margin-top 10px
+			margin-bottom 10px
+		.text
+			padding-left 10px
+			
+	.footer
+		clear both
+		height 60px
+
+.map 
+	float right
+	position relative
+	right -10px
+	top -5px
+	bottom 0px
+	padding 5px
+.map:hover
+	background-color #E1E1E1
+	cursor pointer
+
+#map-canvas
+	height 775px
+	width 890px
+	margin-left 5px
+	margin-top 10px
+#map
+	height 800px
+	width 900px
+	position fixed
+	left 50%-10px
+	top 50%-400px
+	z-index 10
+	background-color white
+	display none
+
+.homeSearch
+	position static
+	width 600px
+	margin-left auto
+	margin-right auto
+	
+	input[type=text]
+		margin-left auto
+		margin-right auto
+		width 600px
+		height 33px
+		padding 3px
+		font-family 'Roboto Slab'	
+		border 1px solid #DDD
+		padding-left 5px
+		padding-right 5px
+		background-image url('/images/search.png') 
+		background-repeat no-repeat
+		background-position right
+		
+.homeTitle
+	position static
+	margin-left auto
+	margin-right auto
+	margin-top 50%
+	font-family 'Roboto Slab'	
+	font-size 5em
+	font-weight 300
+	
+	.tour
+		display inline-block
+		font-weight 100			
+	.au
+		display inline-block
+	.t
+		display inline-block
